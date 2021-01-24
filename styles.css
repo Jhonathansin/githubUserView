@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+
+:root {
+    --color-bg-header: #24292e;
+    --color-text-link: #0366d6;
+    --color-bg-button: #2ea44f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+body {
+    background-color: var(--color-bg-header);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    background-color: var(--color-bg-header);
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+header h1 {
+    width: 175px;
+}
+
+header h1:hover {
+    cursor: pointer;
+    color: var(--color-text-link);
+    transition: 0.2s ease;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    bottom: 0;
+    left: 5%;
+    border-bottom: 3px solid white;
+}
+
+header h1 {
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+header div {
+    margin-right: 5%;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+header div:hover {
+    color: var(--color-text-link);
+    transition: 0.4s ease;
+}
+
+header div::before {
+    content: "<<";
+    position: absolute;
+    transform: translateX(-25px);
+}
+
+#search {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40vh;
+    width: 100%;
+}
+
+#user-not-found {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: absolute;
+    transform: translateY(-50px);
+}
+
+#search img {
+    position: absolute;
+    transform: translateY(-100px);
+}
+
+#search input {
+    border: none;
+    min-width: 195px;
+    max-width: 400px;
+    width: 60%;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 15px;
+    outline: none;
+}
+
+#search button {
+    margin-top: 20px;
+    background-color: var(--color-bg-button);
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 15px;
+    min-width: 100px;
+    max-width: 200px;
+    width: 30%;
+    cursor: pointer;
+    color: white;
+    position: relative;
+}
+
+#search button::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 37px;
+    border-radius: 15px;
+    position: absolute;
+}
+
+#search button:hover::before {
+    width: 100%;
+    transition: 0.5s ease;
+    background-color: #199119;
+    z-index: 1;
+}
+
+#search button:hover::after {
+    content: "Pesquisar";
+    width: 100%;
+    height: 37px;
+    position: absolute;
+    left: 0;
+    z-index: 2
+}
+
+#perfil {
+    display: grid;
+    grid-template-columns: minmax(160px, 1.5fr) 7fr;
+    padding: 0 4%;
+    height: 75vh;
+}
+
+#info {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px -1px 0px 1px white;
+}
+
+#foto-perfil {
+    min-width: 120px;
+    width: 85%;
+    align-self: center;
+    margin-top: 7%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#foto-perfil img {
+    outline: 1px solid black;
+}
+
+#nome-usuario {
+    align-self: center;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#nome-usuario:hover {
+    color: var(--color-text-link);
+    transition: 0.4s ease;
+}
+
+#interacoes {
+    width: 85%;
+    border-top: 1px solid white;
+    margin-left: 6%;
+    margin-top: 15px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px;
+}
+
+#repositorios {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+}
+
+#repositorios::-webkit-scrollbar {
+    background-color: rgba(0,0,0, 0.2);
+    width: 8px;
+    padding: 30px;
+}
+
+#repositorios::-webkit-scrollbar-thumb {
+    background-color: var(--color-bg-button);
+    
+}
+
+.nome-repositorio {
+    color: white;
+    font-size: 0.9em;
+}
+
+.nome-repositorio:hover {
+    color: var(--color-text-link);
+    transition: 0.4s ease;
+}
+
+#repositorios > div {
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    width: 200px;
+    min-width: 200px;
+    height: fit-content;
+}
+
+#repositorios > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+#repositorios > div h2 {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+#repositorios > div > div {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position-x: center;
+    cursor: pointer;
+}
+
+#repositorios > div > div[style*="github.jpg"] {
+    background-position-x: center;
+}
+
+/* .repositorio p:nth-of-type(1) {
+    margin-top: 10px;
+} */
+
+.repositorio p {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: rgba(255,255,255, 0.5);
+    width: 100%;
+    font-size: 0.9em;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    font-weight: bold;
+}
+
+.repositorio p::before {
+    position: absolute;
+    transition: 0.2s ease;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255,255,255, 0.9);
+}
+
+.repositorio p:hover::before {
+    width: 100%;
+    transition: 0.4s ease;
+}
+
+.repositorio p:first-of-type::after {
+    transition: 0.4s ease;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    content: "Acessar Repositório";
+    padding-left: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.repositorio p:nth-of-type(2)::after {
+    transition: 0.4s ease;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    content: "";
+    padding-left: 5px;
+}
+
+.repositorio p:nth-of-type(2):hover::after {
+    z-index: 2;
+    content: "Clonar"
+}
+
+.repositorio p:nth-of-type(3)::after {
+    transition: 0.4s ease;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    content: "Mais Informação";
+    padding-left: 5px;
+}
+
+.repositorio p.cloned {
+    background-color: var(--color-bg-button);
+    color: white;
+    position: relative;
+}
+
+.repositorio p.cloned::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    font-size: 1.2em;
+    content: "";
+    align-self: center;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.repositorio p.cloned:hover::after {
+    content: "";
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    background-image: url(clipboard.svg);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(calc(160px))
+}
+
+#pagina-repositorio {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#perfil-repositorio {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conteudo-repositorio {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#nome-dono-repositorio {
+    color: white;
+    cursor: pointer;
+}
+
+#nome-dono-repositorio:hover {
+    color: var(--color-text-link);
+    transition: 0.4s ease;
+}
+
+#foto-perfil-repositorio {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#seguindo-repositorio {
+    min-width: 110px;
+    margin-top: 5px;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: var(--color-text-link);
+    cursor: pointer;
+}
+
+#seguindo-repositorio:hover {
+    transition: 0.4s ease;
+    background-color: #0333a3;
+}
+
+#info-repo {
+    width: 300px;
+    padding: 10px;
+    background-color:rgba(255,255,255,0.5);
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+#nome-repositorio {
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+#nome-repositorio:hover {
+    color: var(--color-text-link);
+    transition: 0.4s ease;
+}
+
+#descricao-repositorio {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 5px;
+    color: var(--color-bg-button);
+    background-color: rgba(0,0,0,0.4);
+    padding: 5px;
+    font-weight: bold;
+}
+
+#colaboradores {
+    margin-top: 10px;
+    background-color: var(--color-text-link);
+    padding: 5px 12px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#colaboradores:hover {
+    transition: 0.4s ease;
+    background-color: #0333a3;
+}
+
+#branchs {
+    margin-top: 5px;
+    background-color: var(--color-text-link);
+    padding: 5px 12px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#branchs:hover {
+    transition: 0.4s ease;
+    background-color: #0333a3;
+}
+
+#commits {
+    margin-top: 5px;
+    background-color: var(--color-text-link);
+    padding: 5px 12px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#commits:hover {
+    transition: 0.4s ease;
+    background-color: #0333a3;
+}
+
+#mostra-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 5;
+    /* display: flex; */
+}
+
+#conteudo-info {
+    max-width: 400px;
+    height: 60vh;
+    background-color: rgba(255,255,255,0.8);
+    transform: translateX(calc(50vw - 200px));
+    margin-top: 50px;
+    z-index: 8;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+#conteudo-info > div {
+    background-color: var(--color-bg-button);
+    padding: 5px;
+    font-weight: bold;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+    /* margin: 0; */
+}
+
+#conteudo-info > div > p {
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+}
+
+#linguagens {
+    width: 100%;
+    display: flex;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+.elemento-linguagem {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg-button);
+    padding: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.elemento-linguagem div {
+    width: 60%;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20%;
+}
+
+.elemento-linguagem p {
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--color-bg-header);
+    color: white;
+    padding: 10px 5%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    border-top: 2px solid white;
+}
+
+footer > p {
+    justify-self: flex-end;
+}
+
+footer > div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer > div > div {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#github-icon {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#github-icon i {
+   font-size: 20px;
+   color: white;
+   transform: translate(1px,-5px);
+   cursor: pointer;
+}
+
+#github-icon i:hover {
+    color: var(--color-text-link);
+    transition: 0.4s ease;
+}
+
+#linkedin-icon {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#linkedin-icon i {
+   font-size: 20px;
+   color: white;
+   transform: translate(1px,-5px);
+   cursor: pointer;
+}
+
+#linkedin-icon i:hover {
+    color: var(--color-text-link);
+    transition: 0.4s ease;
+}
+
+@media screen and (max-height: 280px) {
+    #repositorios {
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        font-size: 15px;
+    }
+    footer > p {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-self: center;
+    }
+    footer > div {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-self: center;
+        margin-top: 5px;
+    }
+}
+
+.none {
+    display: none !important;
+}

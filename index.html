@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="voltarPaginaInicial()">GitHub User View</h1>
+        <div id="voltar" class="none">Voltar</div>
+    </header>
+
+    <main class="search">
+        <div id="search">
+            <p hidden id="user-not-found">O usuário não foi encontrado...</p>
+            <img src="load.svg" alt="load" width=80 hidden id="load">
+            <input type="text" placeholder="Digite o nome do usuário..." id="inputSearch">
+            <button id="buttonSearch" onclick="searchUser(document.querySelector('input').value)">Pesquisar</button>
+        </div>
+        <div id="perfil" class="none">
+            <div id="info">
+                <img src="" alt="foto de perfil" id="foto-perfil">
+                <p id="nome-usuario">
+
+                </p>
+                <div id="interacoes">
+                    <p id="seguidores">Seguidores:</p>
+                    <span id="numero-seguidores"></span>
+                    <p id="seguindo">Seguindo:</p>
+                    <span id="numero-seguindo"></span>
+                </div>
+            </div>
+            <div id="repositorios">
+
+            </div>
+        </div>
+
+        <div id="pagina-repositorio" class="none">
+            <div id="perfil-repositorio">
+                <h2 id="nome-dono-repositorio"></h2>
+                <div id="foto-perfil-repositorio"></div>
+                <p id="seguindo-repositorio"></p>
+            </div>
+
+            <div id="conteudo-repositorio">
+                <div id="info-repo">
+                    <h2 id="nome-repositorio"></h2>
+                    <p id="descricao-repositorio"></p>
+                    <p id="colaboradores"></p>
+                    <p id="branchs"></p>
+                    <p id="commits"></p>
+                    <div id="linguagens"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mostra-info" class="none">
+            <div id="conteudo-info"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por &copy; Jhonathan Sinzervhc</p>
+        <div>
+            <div id="github-icon">
+                <i class="bi-github"></i>
+            </div>
+            <div id="linkedin-icon">
+                <i class="bi-linkedin"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
