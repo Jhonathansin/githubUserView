@@ -176,7 +176,6 @@ async function infoRepositorio(nome, repositorioNome) {
         elementoLinguagem.setAttribute("class", "elemento-linguagem")
 
         const imagemLinguagem = document.createElement("div")
-        console.log(imagensLinguages[i])
         imagemLinguagem.style.backgroundImage = `url(${imagensLinguages[i] || imagensLinguages["github"]})`
 
         const porcentagemLinguagem = document.createElement("p")
@@ -189,7 +188,6 @@ async function infoRepositorio(nome, repositorioNome) {
         linguages.append(elementoLinguagem)
 
     }
-    console.log(listaLinguagens)
 
     let repo = ""
 
