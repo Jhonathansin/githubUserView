@@ -136,8 +136,6 @@ function acessarLink(id, url) {
     document.querySelector(`#${id}`).onclick = function() {
         window.open(url, "_blank")
     }
-    
-    // addEventListener("click", )
 }
     
 function entrarPerfil(id, url) {
@@ -159,6 +157,7 @@ async function infoRepositorio(nome, repositorioNome) {
     const linguages = document.querySelector("#linguagens")
 
     voltar.onclick = function() {
+        repositorios.innerHTML = ""
         paginaRepositorio.setAttribute("class", "none")
         searchUser(nome)
     }
