@@ -411,8 +411,6 @@ async function searchUser(userId) {
         
         req.open("GET", `https://api.github.com/users/${userId}/repos`)
 
-        // req.setRequestHeader("Accept", "application/vnd.github.v3+json")
-
         req.onreadystatechange = async () => {
             if (req.readyState == 4 && req.status == 200 && JSON.parse(req.responseText) != '') {
                 const json = req.responseText
